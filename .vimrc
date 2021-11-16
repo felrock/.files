@@ -10,7 +10,7 @@
 call plug#begin()
 
 " Gruvbox theme.
-Plug 'gruvbox-community/gruvbox'
+" Plug 'gruvbox-community/gruvbox'
 
 " Integrate fzf with Vim.
 Plug '~/.fzf'
