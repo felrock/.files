@@ -7,7 +7,7 @@
 " -----------------------------------------------------------------------------
 
 " Specify a directory for plugins.
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 
 " Gruvbox theme.
 Plug 'gruvbox-community/gruvbox'
