@@ -10,7 +10,7 @@
 call plug#begin()
 
 " Gruvbox theme.
-" Plug 'gruvbox-community/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 
 " Integrate fzf with Vim.
 Plug '~/.fzf'
@@ -112,7 +112,7 @@ call plug#end()
 " Color settings
 " -----------------------------------------------------------------------------
 
-colorscheme gruvbox
+" colorscheme gruvbox
 " For Gruvbox to look correct in terminal Vim you'll want to source a palette
 " script that comes with the Gruvbox plugin.
 "
