@@ -105,14 +105,14 @@ Plug 'vim-python/python-syntax'
 Plug 'vim-ruby/vim-ruby'
 Plug 'wgwoods/vim-systemd-syntax'
 Plug 'Valloric/YouCompleteMe'
-
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " -----------------------------------------------------------------------------
 " Color settings
 " -----------------------------------------------------------------------------
 
-" colorscheme gruvbox
+colorscheme gruvbox
 " For Gruvbox to look correct in terminal Vim you'll want to source a palette
 " script that comes with the Gruvbox plugin.
 "
