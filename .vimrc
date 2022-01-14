@@ -57,4 +57,5 @@ nnoremap <slient> <Leader>gf :YcmCompleter FixIt
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 
 " NERDTree
-let NERDTreeShowHidden=1
+let NERDTreeShowHidden = 1
+
