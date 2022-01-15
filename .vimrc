@@ -24,7 +24,6 @@ set tabstop=4 softtabstop=4
 set expandtab
 set smartindent
 set nu
-set nowrap
 set smartcase
 set noswapfile
 set nobackup
@@ -32,6 +31,14 @@ set undodir=~/.vim/undodir
 set undofile
 set incsearch
 set colorcolumn=120
+
+" Seamlessly treat visual lines as actual lines when moving around.
+noremap j gj
+noremap k gk
+noremap <Down> gj
+noremap <Up> gk
+inoremap <Down> <C-o>gj
+inoremap <Up> <C-o>gk
 
 " Navigate around splits with a single key combo.
 nnoremap <C-l> <C-w><C-l>
@@ -57,5 +64,4 @@ nnoremap <slient> <Leader>gf :YcmCompleter FixIt
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 
 " NERDTree
-let NERDTreeShowHidden = 1
-
+let NERDTreeShowHidden=1
