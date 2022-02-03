@@ -10,6 +10,7 @@ Plug 'lyuts/vim-rtags'
 Plug 'Valloric/YouCompleteMe'
 Plug 'mbbill/undotree'
 Plug 'preservim/nerdtree'
+Plug 'davidhalter/jedi-vim'
 
 call plug#end()
 
@@ -27,10 +28,13 @@ set nu
 set smartcase
 set noswapfile
 set nobackup
-set undodir=~/.vim/undodir
+set undodir=~/.vim/undo
 set undofile
 set incsearch
 set colorcolumn=120
+
+" create undo if needed
+let undo_res = system("!test -e ~/.vim/undo && mkdir ~/.vim/undo")
 
 " Seamlessly treat visual lines as actual lines when moving around.
 noremap j gj
@@ -65,3 +69,4 @@ let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 
 " NERDTree
 let NERDTreeShowHidden=1
+
