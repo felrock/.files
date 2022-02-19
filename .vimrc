@@ -5,8 +5,6 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'vim-utils/vim-man'
-Plug 'lyuts/vim-rtags'
 Plug 'Valloric/YouCompleteMe'
 Plug 'mbbill/undotree'
 Plug 'preservim/nerdtree'
@@ -32,9 +30,6 @@ set undodir=~/.vim/undo
 set undofile
 set incsearch
 set colorcolumn=120
-
-" create undo if needed
-let undo_res = system("!test -e ~/.vim/undo && mkdir ~/.vim/undo")
 
 " Seamlessly treat visual lines as actual lines when moving around.
 noremap j gj
