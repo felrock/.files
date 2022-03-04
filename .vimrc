@@ -5,8 +5,6 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'vim-utils/vim-man'
-Plug 'lyuts/vim-rtags'
 Plug 'Valloric/YouCompleteMe'
 Plug 'mbbill/undotree'
 Plug 'preservim/nerdtree'
@@ -33,9 +31,6 @@ set undofile
 set incsearch
 set colorcolumn=120
 
-" create undo if needed
-let undo_res = system("!test -e ~/.vim/undo && mkdir ~/.vim/undo")
-
 " Seamlessly treat visual lines as actual lines when moving around.
 noremap j gj
 noremap k gk
@@ -61,12 +56,10 @@ noremap x "_x
 noremap X "_x
 
 " YCM
-nnoremap <slient> <Leader>gd :YcmCompleter GoTo
-nnoremap <slient> <Leader>gf :YcmCompleter FixIt
+noremap <C-d> :YcmCompleter GoTo<CR>
 
 " fzf
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 
 " NERDTree
 let NERDTreeShowHidden=1
-
