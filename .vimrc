@@ -12,8 +12,6 @@ Plug 'davidhalter/jedi-vim'
 
 call plug#end()
 
-colorscheme gruvbox
-
 " my defines
 let mapleader = " "
 set background=dark
