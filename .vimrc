@@ -5,25 +5,34 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'Valloric/YouCompleteMe'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'vim-syntastic/syntastic'
+" Plug 'Valloric/YouCompleteMe'
 Plug 'mbbill/undotree'
 Plug 'preservim/nerdtree'
 Plug 'davidhalter/jedi-vim'
 
 call plug#end()
 
+syntax on
+colorscheme gruvbox
+
 " my defines
 let mapleader = " "
 set background=dark
 set clipboard=unnamedplus
 set noerrorbells
-set tabstop=4 softtabstop=4
 set expandtab
+set tabstop=2 softtabstop=2
+set shiftwidth=2
 set smartindent
 set nu
 set smartcase
 set noswapfile
 set nobackup
+set nowritebackup
+set cmdheight=2
+set updatetime=300
 set undodir=~/.vim/undo
 set undofile
 set incsearch
@@ -59,5 +68,46 @@ noremap <C-d> :YcmCompleter GoTo<CR>
 " fzf
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 
-" NERDTree
-let NERDTreeShowHidden=1
+" COC.vim
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" " format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                                    \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+  \ pumvisible() ? "\<C-n>" :
+  \ CheckBackspace() ? "\<TAB>" :
+  \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" syntastic
+"
+let g:syntastic_cpp_checkers = ['cpplint']
+let g:syntastic_c_checkers = ['cpplint']
+let g:syntastic_cpp_cpplint_exec = 'cpplint'
+
+" The following two lines are optional. Configure it to your liking!
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
