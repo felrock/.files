@@ -46,6 +46,11 @@ noremap <Down> gj
 noremap <Up> gk
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
+map <S-j> 10j
+map <S-k> 10k
+map <S-l> 10l
+map <S-h> 10h
+
 
 " Navigate around splits with a single key combo.
 nnoremap <C-l> <C-w><C-l>
