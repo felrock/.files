@@ -34,10 +34,18 @@ set nobackup
 set nowritebackup
 set cmdheight=2
 set updatetime=300
-set undodir=~/.vim/undo
-set undofile
 set incsearch
 set colorcolumn=120
+
+" Let's save undo info!
+if !isdirectory($HOME."/.vim")
+    call mkdir($HOME."/.vim", "", 0770)
+endif
+if !isdirectory($HOME."/.vim/undo-dir")
+    call mkdir($HOME."/.vim/undo-dir", "", 0700)
+endif
+set undodir=~/.vim/undo-dir
+set undofile
 
 " Seamlessly treat visual lines as actual lines when moving around.
 noremap j gj
@@ -50,7 +58,6 @@ map <S-j> 10j
 map <S-k> 10k
 map <S-l> 10l
 map <S-h> 10h
-
 
 " Navigate around splits with a single key combo.
 nnoremap <C-l> <C-w><C-l>
@@ -69,7 +76,7 @@ noremap x "_x
 noremap X "_x
 
 " YCM
-noremap <C-d> :YcmCompleter GoTo<CR>
+" noremap <C-d> :YcmCompleter GoTo<CR>
 
 " fzf
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
@@ -77,8 +84,8 @@ let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 " COC.vim
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " " format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                                    \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+"inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+"                                    \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -90,9 +97,6 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call ShowDocumentation()<CR>
 
 function! CheckBackspace() abort
   let col = col('.') - 1
@@ -106,14 +110,11 @@ inoremap <silent><expr> <TAB>
   \ pumvisible() ? "\<C-n>" :
   \ CheckBackspace() ? "\<TAB>" :
   \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
+inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
 inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
-let g:coc_disable_startup_warning = 1
 
 " syntastic
-"
 let g:syntastic_cpp_checkers = ['cpplint']
 let g:syntastic_c_checkers = ['cpplint']
 let g:syntastic_cpp_cpplint_exec = 'cpplint'
@@ -125,3 +126,6 @@ let g:syntastic_check_on_wq = 0
 " whitespace no more
 let g:strip_whitespace_confirm=0
 let g:strip_whitespace_on_save=1
+
+" coc stuff
+let g:coc_disable_startup_warning = 1
