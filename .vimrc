@@ -19,9 +19,15 @@ syntax on
 colorscheme gruvbox
 
 " my defines
+
+if system('uname -s') == "Darwin\n"
+  set clipboard=unnamed "OSX
+else
+  set clipboard=unnamedplus "Linux
+endif
+
 let mapleader = " "
 set background=dark
-set clipboard=unnamedplus
 set noerrorbells
 set expandtab
 set tabstop=2 softtabstop=2
