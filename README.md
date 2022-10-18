@@ -34,3 +34,10 @@ https://codevion.github.io/index.html#!vim/coc.md
 }
 }
 ```
+
+and Add a _.ccls_ file into the root directory:
+
+_.ccls_
+```
+%compile_commands.json
+```
