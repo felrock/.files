@@ -53,7 +53,8 @@ hi SpellBad ctermfg=blue
 set statusline="%f%m%r%h%w [%Y] [0x%02.2B]%< %F%=%4v,%4l %3p%% of %L"
 
 " nerdtree on startup, and goto right pane
-let g:NERDTreeWinSize=45
+let g:NERDTreeWinSize=40
+let NERDTreeShowHidden=1
 au VimEnter *  NERDTree | :wincmd l
 
 " Let's save undo info!
@@ -142,7 +143,7 @@ function! s:on_lsp_buffer_enabled() abort
     let g:lsp_diagnostics_virtual_text_enabled = 0
 
     let g:lsp_format_sync_timeout = 1000
-    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+    autocmd! BufWritePre *.rs,*.go,*.cpp,*.h,*.py call execute('LspDocumentFormatSync')
 
     " refer to doc to add more commands
 endfunction
@@ -152,3 +153,4 @@ augroup lsp_install
     " call s:on_lsp_buffer_enabled only for languages that has the server registered.
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
+
