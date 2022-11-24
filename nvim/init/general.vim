@@ -55,6 +55,7 @@ set statusline="%f%m%r%h%w [%Y] [0x%02.2B]%< %F%=%4v,%4l %3p%% of %L"
 " nerdtree on startup, and goto right pane
 let g:NERDTreeWinSize=40
 let NERDTreeShowHidden=1
+nmap <F6> :NERDTreeToggle<CR>
 au VimEnter *  NERDTree | :wincmd l
 
 " Let's save undo info!
@@ -75,7 +76,7 @@ noremap <Up> gk
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
 map <S-j> 10j
-" map <S-k> 10k
+map <S-k> 10k
 map <S-l> 10l
 map <S-h> 10h
 
@@ -137,7 +138,7 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> <leader>rn <plug>(lsp-rename)
     nmap <buffer> [g <plug>(lsp-previous-diagnostic)
     nmap <buffer> ]g <plug>(lsp-next-diagnostic)
-    nmap <buffer> K <plug>(lsp-hover)
+    nmap <buffer> P <plug>(lsp-hover)
     nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
     nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
     let g:lsp_diagnostics_virtual_text_enabled = 0
