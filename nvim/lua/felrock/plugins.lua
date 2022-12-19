@@ -34,4 +34,14 @@ return require('packer').startup(function()
 
     -- NerdTree
     use 'preservim/nerdtree'
+
+    -- CoPilot cmp
+    -- use { "zbirenbaum/copilot.lua" }
+    -- use {
+    --    "zbirenbaum/copilot-cmp",
+    --    after = { "copilot.lua" },
+    --    config = function ()
+    --    require("copilot_cmp").setup()
+    --    end
+    --}
 end)

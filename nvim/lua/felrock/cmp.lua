@@ -24,8 +24,8 @@ mapping = cmp.mapping.preset.insert({
 }),
 sources = cmp.config.sources({
   { name = 'nvim_lsp' },
-  { name = 'vsnip' }, -- For vsnip users.
   { name = 'luasnip' }, -- For luasnip users.
+  -- { name = 'copilot' }, -- For CoPilot users.
   -- { name = 'ultisnips' }, -- For ultisnips users.
   -- { name = 'snippy' }, -- For snippy users.
 }, {
@@ -60,15 +60,17 @@ sources = cmp.config.sources({
 })
 })
 
+-- Setup tab completion
 cmp.setup {
-mapping = {
-  ['<Tab>'] = function(fallback)
-    if cmp.visible() then
-      cmp.select_next_item()
-    else
-      fallback()
-    end
-  end
+    mapping = {
+      ['<Tab>'] = function(fallback)
+        if cmp.visible() then
+          cmp.select_next_item()
+        else
+          fallback()
+        end
+      end
+    }
 }
-}
+
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
