@@ -55,6 +55,20 @@ word as an correct spelling.
 
 Run `LspStop` to remove errors LSP is producing in the current file.
 
+### GDB
+
+add Termdebug to your session:
+```
+:packadd termdebug
+```
+
+Launch Debugger:
+```
+:Termdebug
+```
+
+Select binary to run, set brakepoints etc.
+
 ### Misc
 
 Emacs sux.
