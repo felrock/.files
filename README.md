@@ -41,3 +41,13 @@ _.ccls_
 ```
 %compile_commands.json
 ```
+
+### Programs to make it chill to use the terminal
+```
+fd-find
+ripgrep
+fzf
+zoxide(z)
+ranger
+nnn
+```
