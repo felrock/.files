@@ -68,6 +68,7 @@ Launch Debugger:
 ```
 
 Select binary to run, set brakepoints etc.
+See https://www.dannyadam.com/blog/2019/05/debugging-in-vim/
 
 ### Misc
 
