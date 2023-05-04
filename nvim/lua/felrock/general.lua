@@ -1,7 +1,7 @@
 -- COLOR SETTINGS
 vim.cmd [[
   try
-    colorscheme gruvbox
+    colorscheme tokyonight-moon
   catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme default
     set background=dark
