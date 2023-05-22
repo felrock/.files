@@ -8,6 +8,7 @@ return require("packer").startup(function()
     use "luisiacc/gruvbox-baby"
     use 'folke/tokyonight.nvim'
     use "gruvbox-community/gruvbox"
+    use "tpope/vim-surround"
 
     -- Packer can manage itself
     use "wbthomason/packer.nvim"
