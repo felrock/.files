@@ -24,6 +24,7 @@ set updatetime=300
 set incsearch
 set colorcolumn=100
 set spelllang=en
+set nofoldenable
 hi clear Spellbad
 hi SpellBad ctermfg=blue
 
