@@ -1,53 +1,25 @@
 # *DOT* *DOT* *DOT*
 
 ## Dox
-My .vimrc needs the following: neovim, vim-gtk, python3-dev, cmake, clang, build-essential, and vim-plug
-
-For markdown preview to work, download node and yarn
-
-## vim-plug
+Follow instructions below.
 
 ### Unix install:
 
-```sh
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-```
-
-### CoC config for C++ dev:
-
-https://codevion.github.io/index.html#!vim/coc.md
-
-```
-{
-"languageserver": {
-  "ccls": {
-    "command": "ccls",
-    "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
-    "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
-    "initializationOptions": {
-        "cache": {
-          "directory": "/tmp/ccls"
-        }
-      }
-  }
-}
-}
-```
-
-and Add a _.ccls_ file into the root directory:
-
-_.ccls_
-```
-%compile_commands.json
-```
+1. Install neo-vim bleeding edge
+2. Install clangd, gcc, CMake and other chill programs below
+3. Run packer in nvim, install all modules
+4. Load confz
+5. Buy cherry-mx blue switches, install them, bring your keebs to work, run typing challenges all day = Profit
 
 ### Programs to make it chill to use the terminal
 ```
-fd-find
-ripgrep
-fzf
-zoxide(z)
-ranger
-nnn
+neovim - editor
+fd-find - file-name search
+ripgrep - in-file search
+fzf - fuzzy finding
+zoxide(z) - autojump but rewritten in rust so you dont get segfaults
+ranger - hackermovie folder navigation
+nnn - same as above, but no dep, lightweight, ultra
+btop - htop but more dweeb interface
+tmux - throw away your keebs
 ```
