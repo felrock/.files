@@ -6,7 +6,7 @@ Follow instructions below.
 ### Unix install:
 
 1. Install neo-vim bleeding edge
-2. Install clangd, gcc, CMake and other chill programs below
+2. Install clangd, gcc, CMake, fzf, packer and other chill programs below
 3. Run packer in nvim, install all modules
 4. Load confz
 5. Buy cherry-mx blue switches, install them, bring your keebs to work, run typing challenges all day = Profit
