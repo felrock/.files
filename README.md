@@ -22,6 +22,7 @@ ranger - hackermovie folder navigation
 nnn - same as above, but no dep, lightweight, ultra
 btop - htop but more dweeb interface
 tmux - throw away your keebs
+xclip - for all that good good pasta
 ```
 ### LINKZ
 
