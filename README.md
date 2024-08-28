@@ -23,3 +23,6 @@ nnn - same as above, but no dep, lightweight, ultra
 btop - htop but more dweeb interface
 tmux - throw away your keebs
 ```
+### LINKZ
+
+https://askubuntu.com/questions/363346/how-to-permanently-switch-caps-lock-and-esc
