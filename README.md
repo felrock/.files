@@ -5,6 +5,10 @@ Follow instructions below.
 
 ### Unix install:
 
+```sh
+curl -fsSL https://raw.githubusercontent.com/felrock/.files/master/install.sh | sudo bash
+```
+
 1. Install neo-vim bleeding edge
 2. Install clangd, gcc, CMake, fzf, packer and other chill programs below
 3. Run packer in nvim, install all modules
